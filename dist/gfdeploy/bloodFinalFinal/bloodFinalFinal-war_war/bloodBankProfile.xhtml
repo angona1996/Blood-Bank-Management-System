@@ -1,0 +1,104 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:pt="http://xmlns.jcp.org/jsf/passthrough">
+          <link href='http://fonts.googleapis.com/css?family=Bitter' rel='stylesheet' type='text/css'/>
+    <link href="newcss.css" rel='stylesheet' type='text/css'/>
+    <script type="text/javascript" src="javascriptfile/bankprofile.js"/>
+     
+  
+
+    <h:head>
+        <title>Blood Bank Profile</title>
+    </h:head>
+    <h:body>
+        
+        <p>Welcome, #{email}</p>
+        <h:form>
+            <h:commandButton value="Logout" action="#{bankLoginController.logout()}" > </h:commandButton>
+        </h:form>
+         <br>
+            
+        </br>
+        
+           
+        <f:view>
+            
+       <div class="form-style-10">
+
+           <h:form id="myform" >   
+      
+      
+            <h1>
+                Update Blood Bank Profile and Status !
+            </h1>
+     
+ 
+         
+               
+                <div class="inner-wrap"> 
+            
+            <div class="section"><span>1</span>Blood Bank Information</div>        
+                   
+                  
+                    
+                        
+                        
+                    <h:outputLabel value="Blood Bank Name:" for="name" > 
+                        <h:inputText id="name" value="#{bankLoginController.bb.bankName}" pt:placeholder="Enter Name" title="Name" required="true" requiredMessage="The Bank Name field is required."/>
+                    </h:outputLabel>
+                    <br/>
+                    <h:outputLabel value="email:" for="email" /> 
+                    <h:inputText id="email" value="#{bankLoginController.bb.bankEmail}" pt:placeholder="Enter Email" title="Email" required="true" requiredMessage="The Username field is required."  disabled="true"/>
+                    <br/>
+                    
+                    <h:outputLabel value="ContactNo:" for="contactNo" />
+                    <h:inputText id="contactno"  value="#{bankLoginController.bb.bankContactNo}" pt:placeholder="Enter Contact no" title="ContactNo" required="true" requiredMessage="The ContactNo field is required."/>
+                    <br/>
+                    <h:outputLabel value="Address" for="address" />
+                    <h:inputText id="address" value="#{bankLoginController.bb.bankAddress}" pt:placeholder="Enter Address" title="Adress" required="true" requiredMessage="The Address field is required."/>
+                     <br/>
+                    
+                     <div class="section"><span>2</span>Blood Bank Status</div> 
+                     
+                  
+                    
+                    <h:outputLabel value="A+ve :" />
+                    <h:inputText id="ave" value="#{bankLoginController.bb.ave}" pt:placeholder="A+ve blood bag" required="true" requiredMessage="The A+ve blood field is required."/>         
+                    
+                    <h:outputLabel value="A-ve :" />
+                    <h:inputText id="anv" value="#{bankLoginController.bb.avel}" pt:placeholder="A-ve blood bag" required="true" requiredMessage="The A-ve blood field is required."/>         
+                      
+                    <h:outputLabel value="B+ve :" />
+                    <h:inputText id="bve" value="#{bankLoginController.bb.bve}" pt:placeholder="B+ve blood bag" required="true" requiredMessage="The B+ve blood field is required."/>         
+                      
+                    <h:outputLabel value="B-ve :" />
+                    <h:inputText id="bnv" value="#{bankLoginController.bb.bvel}" pt:placeholder="B-ve blood bag" required="true" requiredMessage="The B-ve blood field is required."/>         
+                      
+                    <h:outputLabel value="AB+ve :" />
+                    <h:inputText id="abve" value="#{bankLoginController.bb.ABve}" pt:placeholder="AB+ve blood bag" required="true" requiredMessage="The AB+ve blood field is required."/>         
+                          
+                     <h:outputLabel value="AB-ve :" />
+                     <h:inputText id="abnv" value="#{bankLoginController.bb.ABvel}" pt:placeholder="AB-ve blood bag" required="true" requiredMessage="The AB-ve blood field is required."/>         
+                      
+                       <h:outputLabel value="O+ve :" />
+                       <h:inputText id="ove" value="#{bankLoginController.bb.ove}" pt:placeholder="O+ve blood bag" required="true" requiredMessage="The O+ve blood field is required."/>         
+                          
+                     <h:outputLabel value="O-ve :" />
+                     <h:inputText id="onv" value="#{bankLoginController.bb.ovel}" pt:placeholder="O-ve blood bag" required="true" requiredMessage="The O-ve blood field is required."/>         
+                      
+                     </div>
+                  
+<div class="button-section">
+    <h:commandButton value="Update Blood Bank Information " onclick="return validateform()"  action="#{bankLoginController.edit()}" > </h:commandButton>
+</div>
+               
+            </h:form>
+            </div>
+        </f:view>
+        
+    </h:body>
+</html>
+

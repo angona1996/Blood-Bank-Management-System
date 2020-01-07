@@ -1,0 +1,191 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:pt="http://xmlns.jcp.org/jsf/passthrough">
+    
+    <script type="text/javascript" src="javascriptfile/donorRegistration.js"/>
+      <link href='http://fonts.googleapis.com/css?family=Bitter' rel='stylesheet' type='text/css'/>
+    <link href="newcss.css" rel='stylesheet' type='text/css'/>
+<style>
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  border: 1px solid #e7e7e7;
+  background-color: #f3f3f3 ;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: #666;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover:not(.active) {
+  background-color: red;
+}
+
+li a.active {
+  color: white;
+  background-color: #4CAF50;
+}
+.cc{
+  color: #e7e7e7;
+  background-color: blanchedalmond;  
+}
+</style>
+  
+
+    <style>
+        
+        .employeeTable {   
+   border-collapse:collapse;
+   border:1px solid #000000;
+}
+
+.employeeTableHeader {
+   text-align:center;
+   background:none repeat scroll 0 0 #B5B5B5;
+   border-bottom:1px solid #000000;  
+   padding:2px;
+}
+
+.employeeTableOddRow {
+   text-align:center;
+   background:none repeat scroll 0 0 #FFFFFF;	
+}
+
+.employeeTableEvenRow {
+   text-align:center;
+   background:none repeat scroll 0 0 #D3D3D3;
+}
+    </style>
+    
+    
+    <h:head>
+        <title>Blood Bank Status</title>
+       
+        
+    </h:head>
+    <h:body>
+           <center>
+        <ul>            
+            <li>    <h:link value="Home" outcome="admin.xhtml"></h:link> </li>
+            <li> <div class="cc">    <h:link value="BLOOD BANK STATUS" outcome="adminViewBank.xhtml"></h:link> </div></li>
+            <li>   <h:link value="DONOR LIST" outcome="DonorStatus.xhtml"></h:link> </li>
+            <li>   <h:link value="Create New User" outcome="adminCreate.xhtml"></h:link> </li>
+
+             <li>    <h:link value="LOGOUT" outcome="adminloginView.xhtml"></h:link> </li>
+
+        </ul>
+            </center>
+        <f:view>
+         
+            <center>
+     
+                <h1 style="color: #2A6881">Blood Bank Status</h1>
+     
+                    
+                  
+                        
+
+
+                        <h:form>
+                            
+                            <h:dataTable  value="#{admin.findAll2()}" var="item" border="1" cellpadding="2" cellspacing="2"
+                                          styleClass = "employeeTable"
+                                    bgcolor="" headerClass = "employeeTableHeader"
+                                    rowClasses = "employeeTableOddRow,employeeTableEvenRow">
+                             
+                                <h:column>
+                                    <f:facet name="header">
+                                        <h:outputText value="Blood Bank Name"/>
+                                    </f:facet>
+                                    <h:outputText value="#{item.bankName}"/>
+                                </h:column>
+                                <h:column>
+                                    <f:facet name="header">
+                                        <h:outputText value="Blood Bank Address"/>
+                                    </f:facet>
+                                    <h:outputText value="#{item.bankAddress}"/>
+                                </h:column>
+                                <h:column>
+                                    <f:facet name="header">
+                                        <h:outputText value="Blood Bank ContactNo"/>
+                                    </f:facet>
+                                    <h:outputText value="#{item.bankContactNo}"/>
+                                </h:column>
+                                <h:column>
+                                    <f:facet name="header">
+                                        <h:outputText value="Blood Bank Email"/>
+                                    </f:facet>
+                                    <h:outputText value="#{item.bankEmail}"/>
+                                </h:column>
+                                <h:column>
+                                    <f:facet name="header">
+                                        <h:outputText value="A+ve"/>
+                                    </f:facet>
+                                    <h:outputText value="#{item.ave}"/>
+                                </h:column>
+                                <h:column>
+                                    <f:facet name="header">
+                                        <h:outputText value="A-ve"/>
+                                    </f:facet>
+                                    <h:outputText value="#{item.avel}"/>
+                                </h:column>
+                                <h:column>
+                                    <f:facet name="header">
+                                        <h:outputText value="B+ve"/>
+                                    </f:facet>
+                                    <h:outputText value="#{item.bve}"/>
+                                </h:column>
+                                <h:column>
+                                    <f:facet name="header">
+                                        <h:outputText value="B-ve"/>
+                                    </f:facet>
+                                    <h:outputText value="#{item.bvel}"/>
+                                </h:column>
+                                <h:column>
+                                    <f:facet name="header">
+                                        <h:outputText value="AB+ve"/>
+                                    </f:facet>
+                                    <h:outputText value="#{item.ABve}"/>
+                                </h:column>
+                                <h:column>
+                                    <f:facet name="header">
+                                        <h:outputText value="AB-ve"/>
+                                    </f:facet>
+                                    <h:outputText value="#{item.ABvel}"/>
+                                </h:column>
+                                <h:column>
+                                    <f:facet name="header">
+                                        <h:outputText value="O-ve"/>
+                                    </f:facet>
+                                    <h:outputText value="#{item.ove}"/>
+                                </h:column>
+                                <h:column>
+                                    <f:facet name="header">
+                                        <h:outputText value="O+ve"/>
+                                    </f:facet>
+                                    <h:outputText value="#{item.ovel}"/>
+                                </h:column>
+                            </h:dataTable>
+                        </h:form>
+
+
+            </center>
+     
+           
+        </f:view>
+    </h:body>
+</html>
+

@@ -1,0 +1,106 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+      >
+      <link href='http://fonts.googleapis.com/css?family=Bitter' rel='stylesheet' type='text/css'/>
+    <link href="newcss.css" rel='stylesheet' type='text/css'/>
+    
+ <style>
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  border: 1px solid #e7e7e7;
+  background-color: #f3f3f3 ;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: #666;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover:not(.active) {
+  background-color: red;
+}
+
+li a.active {
+  color: white;
+  background-color: #4CAF50;
+}
+.cc{
+  color: #e7e7e7;
+  background-color: blanchedalmond;  
+}
+</style>
+    <h:head>
+        <title> Admin Login </title>
+    </h:head>
+    <h:body>
+        <center>
+        <ul>            
+            <li>    <h:link value="Home" outcome="admin.xhtml"></h:link> </li>
+            <li>    <h:link value="BLOOD BANK STATUS" outcome="adminViewBank.xhtml"></h:link> </li>
+            <li> <div class="cc">   <h:link value="DONOR LIST" outcome="DonorStatus.xhtml"></h:link> </div></li>
+            <li>   <h:link value="Create New User" outcome="adminCreate.xhtml"></h:link> </li>
+
+             <li>    <h:link value="LOGOUT" outcome="adminloginView.xhtml"></h:link> </li>
+
+        </ul>
+            </center>
+        <f:view>
+            <div class="form-style-10" style="width: 800px">
+ <h:form>
+     
+<h1>Donor Information  </h1>
+         
+<center>
+                
+                        <h:dataTable var="p" value="#{donor_registration.findAll()}" border="2" cellpadding="2" cellspacing="2" style="color: #257C9E">
+                    <h:column>
+                        <f:facet name="header">Name</f:facet>
+                        <h:outputText value="#{p.donorName}"></h:outputText>
+                    </h:column>
+                     <h:column>
+                        <f:facet name="header">Email</f:facet>
+                        <h:outputText value="#{p.donorEmail}"></h:outputText>
+                    </h:column>
+                     <h:column>
+                        <f:facet name="header">Contact No </f:facet>
+                        <h:outputText value="#{p.donorContactNo}"></h:outputText>
+                    </h:column>
+                    
+                    <h:column>
+                        <f:facet name="header">Area</f:facet>
+                        <h:outputText value="#{p.donorArea}"></h:outputText>
+                    </h:column>
+                     <h:column>
+                        <f:facet name="header">Availability</f:facet>
+                        <h:outputText value="#{p.donorAvailability}"></h:outputText>
+                    </h:column>
+                            <h:column>
+                        <f:facet name="header">Blood Group </f:facet>
+                        <h:outputText value="#{p.donorBloodGroup}"></h:outputText>
+                    </h:column>
+                </h:dataTable>
+             </center>
+                
+            </h:form>
+            
+           
+            </div>
+        </f:view>
+       
+    </h:body>
+</html>
+

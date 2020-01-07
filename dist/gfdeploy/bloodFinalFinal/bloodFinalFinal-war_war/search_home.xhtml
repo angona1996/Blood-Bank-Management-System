@@ -1,0 +1,91 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    
+
+ <style>
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  border: 1px solid #e7e7e7;
+  background-color: #f3f3f3 ;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: #666;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover:not(.active) {
+  background-color: red;
+}
+
+li a.active {
+  color: white;
+  background-color: #4CAF50;
+}
+.cc{
+  color: #e7e7e7;
+  background-color: blanchedalmond;  
+}
+</style>
+    <h:head>
+        <title>F</title>
+    </h:head>
+    <h:body>
+        
+ <center>
+        <ul>
+            <li>  <h:link value="HOME" outcome="index.xhtml"></h:link>  </li> 
+            <li>  <h:link value="ADD A DONOR" outcome="donor_registration.xhtml"></h:link> </li>
+            <li>  <h:link value="ADD A BlOOD BANK" outcome="bankregistration.xhtml"></h:link> </li>
+            <li>    <h:link value="DONOR LOGIN" outcome="donorlogin.xhtml"></h:link> </li>
+            <li>    <h:link value="BLOOD BANK LOGIN" outcome="bloodBankLogin.xhtml"></h:link> </li>
+            <li>     <div class="cc">     <h:link value="SEARCH" outcome="search_result.xhtml"></h:link> </div></li>
+                    <li>    <h:link value="BLOOD BANK STATUS" outcome="BloodBankStatus.xhtml"></h:link> </li>
+                    <li>    <h:link value="EMERGENCY" outcome="shoutbox.xhtml"></h:link> </li>
+
+        </ul>
+            </center>
+        <f:view>
+            <h:form>
+                
+                
+                 <h:outputLabel value="BloodGroup:" for="bloodGroup" />
+                 
+                 <h:selectOneMenu id="bg" value="#{donorSearch.d.donorBloodGroup}" required="true" requiredMessage="The Blood Group field is required."  >
+                        <f:selectItem itemValue="" itemLabel="Select One"/>
+                        <f:selectItem itemValue="A+ve" itemLabel="A+ve"/>
+                        <f:selectItem itemValue="A-ve" itemLabel="A-ve"/>
+                        <f:selectItem itemValue="B+ve" itemLabel="B+ve"/>
+                        <f:selectItem itemValue="B-ve" itemLabel="B-ve"/>
+                        <f:selectItem itemValue="AB+ve" itemLabel="AB+ve"/>
+                        <f:selectItem itemValue="AB-ve" itemLabel="AB-ve"/>
+                        <f:selectItem itemValue="O+ve" itemLabel="O+ve"/>
+                        <f:selectItem itemValue="O-ve" itemLabel="O-ve"/>
+                        
+                    </h:selectOneMenu>
+                
+                 <h:commandButton value="Search" action="#{donorSearch.search()}" > </h:commandButton>
+            
+              <h:outputLabel value="#{donorSearch.prb}"  />
+            </h:form>
+            
+          
+            
+        </f:view>
+
+    </h:body>
+</html>
+

@@ -1,0 +1,73 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <script type="text/javascript" src="javascriptfile/donorprofile.js"/> 
+    <link href='http://fonts.googleapis.com/css?family=Bitter' rel='stylesheet' type='text/css'/>
+    <link href="newcss.css" rel='stylesheet' type='text/css'/>
+    
+    <h:head>
+        <title>Donor Profile</title>
+    </h:head>
+    <h:body>
+        
+        <p>Welcome, #{email}</p>
+        <h:form>
+         <h:commandButton value="Logout" action="#{donorLogin.logout()}" > </h:commandButton>
+        </h:form>
+         <br>
+            
+        </br>
+        <f:view>
+
+                 <div class="form-style-10">
+                     <h1><h:outputText value="Edit Your Profile"/></h1>
+            <h:form id="myform1">
+                
+      
+                <div class="inner-wrap"> 
+                    <h:outputLabel value="Donor Name:" for="donorName" />
+                    <h:inputText id="name" value="#{donorLogin.d.donorName}" title="DonorName" required="true" requiredMessage="The DonorName field is required."/>
+                    <h:outputLabel value="Donor Email:" for="donorEmail" />
+                    <h:inputText id="email" value="#{donorLogin.d.donorEmail}" title="DonorEmail" required="true" requiredMessage="The DonorEmail field is required." disabled="true"/>
+                    
+                    <h:outputLabel value="Donor Contact No:" for="donorContactNo" />
+                    <h:inputText id="contactno" value="#{donorLogin.d.donorContactNo}" title="DonorContactNo" required="true" requiredMessage="The DonorContactNo field is required."/>
+                    <h:outputLabel value="Donor Area:" for="donorArea" />
+                    <h:inputText id="district" value="#{donorLogin.d.donorArea}" title="DonorArea" required="true" requiredMessage="The DonorArea field is required."/>
+                    <h:outputLabel value="Donor Availability:" for="donorAvailability" />
+                   
+                    <h:selectOneMenu id="availability" value="#{donorLogin.d.donorAvailability}" required="true" requiredMessage="The Availability field is required.">
+                         <f:selectItem itemValue="" itemLabel="Select One"/>
+                         <f:selectItem itemValue="Yes" itemLabel="Yes"/>
+                        <f:selectItem itemValue="No" itemLabel="no"/>
+                        
+                    </h:selectOneMenu>
+                    <h:outputLabel value="Donor Blood Group:" for="donorBloodGroup"  />
+                    <h:selectOneMenu id="bg" value="#{donorLogin.d.donorBloodGroup}" required="true" requiredMessage="The Blood Group field is required."  >
+                        <f:selectItem itemValue="" itemLabel="Select One"/>
+                        <f:selectItem itemValue="A+ve" itemLabel="A+ve"/>
+                        <f:selectItem itemValue="A-ve" itemLabel="A-ve"/>
+                        <f:selectItem itemValue="B+ve" itemLabel="B+ve"/>
+                        <f:selectItem itemValue="B-ve" itemLabel="B-ve"/>
+                        <f:selectItem itemValue="AB+ve" itemLabel="AB+ve"/>
+                        <f:selectItem itemValue="AB-ve" itemLabel="AB-ve"/>
+                        <f:selectItem itemValue="O+ve" itemLabel="O+ve"/>
+                        <f:selectItem itemValue="O-ve" itemLabel="O-ve"/>
+                        
+                    </h:selectOneMenu>
+                </div>
+                                  
+<div class="button-section">
+    <h:commandButton value="Update Your Info" onclick="return donorprofilevalidateform()" action="#{donorLogin.edit()}" > </h:commandButton>
+</div>
+            </h:form>
+                 
+                 </div>
+        </f:view>
+
+
+    </h:body>
+</html>
+

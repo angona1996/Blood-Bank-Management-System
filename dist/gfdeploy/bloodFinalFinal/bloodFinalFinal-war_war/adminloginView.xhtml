@@ -1,0 +1,95 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+      >
+      <link href='http://fonts.googleapis.com/css?family=Bitter' rel='stylesheet' type='text/css'/>
+    <link href="newcss.css" rel='stylesheet' type='text/css'/>
+    
+ <style>
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  border: 1px solid #e7e7e7;
+  background-color: #f3f3f3 ;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: #666;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover:not(.active) {
+  background-color: red;
+}
+
+li a.active {
+  color: white;
+  background-color: #4CAF50;
+}
+.cc{
+  color: #e7e7e7;
+  background-color: blanchedalmond;  
+}
+</style>
+    <h:head>
+        <title> Donor Login </title>
+    </h:head>
+    <h:body>
+        <center>
+        <ul>
+            <li>   <h:link value="HOME" outcome="index.xhtml"></h:link>  </li> 
+            <li>  <h:link value="ADD A DONOR" outcome="donor_registration.xhtml"></h:link> </li>
+            <li>  <h:link value="ADD A BlOOD BANK" outcome="bankregistration.xhtml"></h:link> </li>
+            <li>    <h:link value="DONOR LOGIN" outcome="donorlogin.xhtml"></h:link> </li>
+            <li>    <h:link value="BLOOD BANK LOGIN" outcome="bloodBankLogin.xhtml"></h:link> </li>
+            <li>         <h:link value="SEARCH" outcome="search_result.xhtml"></h:link> </li>
+                    <li>    <h:link value="BLOOD BANK STATUS" outcome="BloodBankStatus.xhtml"></h:link> </li>
+                    <li>    <h:link value="EMERGENCY" outcome="shoutbox.xhtml"></h:link> </li>
+            <li>  <div class="cc">  <h:link value="Admin" outcome="adminloginView.xhtml"></h:link> </div></li>
+
+        </ul>
+            </center>
+        <f:view>
+            <div class="form-style-10">
+ <h:form>
+     
+     <h1>Admin Sign IN!</h1>
+     
+         <div class="inner-wrap">
+             <h:outputLabel value="#{adminLogin.prb}" for="name" style="color: red" />
+           
+         
+               
+              
+
+                    
+                    
+                    
+                    
+                    <h:outputLabel value="Email:" for="email" />
+                    <h:inputText id="name" value="#{adminLogin.a.adminEmail}" pt:placeholder="Enter Email" title="Name" required="true" requiredMessage="The Email field is required."/>
+                    <h:outputLabel value="Password:" for="password" />
+                    <h:inputSecret id="email" value="#{adminLogin.a.adminPassword}" pt:placeholder="Enter Password" title="pass" required="true" requiredMessage="The Password field is required." />
+         </div>         
+          <div class="button-section">          
+              <h:commandButton value="Login" action="#{adminLogin.login()}" > </h:commandButton>
+         </div> 
+ </h:form>
+                </div>
+        </f:view>
+       
+    </h:body>
+</html>
+
